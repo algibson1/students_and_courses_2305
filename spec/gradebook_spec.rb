@@ -32,11 +32,11 @@ RSpec.describe Gradebook do
   end
 
   it 'has an instructor' do
-    @expect(@gradebook.instructor).to eq("Prof Sam")
+    expect(@gradebook.instructor).to eq("Prof Sam")
   end
 
   it 'has courses' do
-    @expect(@gradebook.courses).to eq([@course_1, @course_2])
+    expect(@gradebook.courses).to eq([@course_1, @course_2])
   end
 
   it 'can add more courses' do
