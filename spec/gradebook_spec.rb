@@ -53,4 +53,16 @@ RSpec.describe Gradebook do
     expect(@gradebook.students_below(80)).to eq([@student1, @student3])
     expect(@gradebook.students_below(90)).to eq([@student1, @student3, @student4])
   end
+
+  it 'can list all grades in each course' do
+    @gradebook.add_course(@course_3)
+    expect(@gradebook.all_grades).to eq({@course_1 => [77.5, 95], @course_2 => [73], @course_3 => [86.5]})
+  end
+
+  it 'can list students in a given grade range' do
+    @gradebook.add_course(@course_3)
+    expect(@gradebook.students_in_range(75, 90)).to eq([@student3, @student4])
+    expect(@gradebook.students_in_range(70, 80)).to eq([@student1, @student3])
+    expect(@gradebook.students_in_range(80, 100)).to eq([@student2, @student4])
+  end
 end
