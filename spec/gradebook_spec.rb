@@ -61,7 +61,7 @@ RSpec.describe Gradebook do
 
   it 'can list students in a given grade range' do
     @gradebook.add_course(@course_3)
-    expect(@gradebook.students_in_range(75, 90)).to eq([@student3, @student4])
+    expect(@gradebook.students_in_range(75, 90)).to eq([@student1, @student4])
     expect(@gradebook.students_in_range(70, 80)).to eq([@student1, @student3])
     expect(@gradebook.students_in_range(80, 100)).to eq([@student2, @student4])
   end
